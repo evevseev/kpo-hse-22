@@ -22,19 +22,18 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         if (args == null || args.length != 1) {
-            System.out.println("Usage: java Main <filename>");
+            System.out.println("Usage: java Main <db_filename>");
             return;
         }
         final String fileName = args[0];
         final Path absolutePath = Path.of(fileName).toAbsolutePath();
-
 
         List<Student> students = null;
         try {
             String fileData = Files.readString(absolutePath);
             students = JsonSerializer.deserialize(fileData);
         } catch (JsonProcessingException e) {
-            System.out.println("Failed to deserialize file: " + e.getOriginalMessage());
+            System.out.println("Failed to get data from file, so demo list is generated.");
         } catch (IOException e) {
             System.out.println("Failed to read file: " + e.getCause());
             return;

@@ -2,6 +2,11 @@ public class Student extends Person {
     private Boolean isPresent;
     private Integer lessonGrade;
 
+
+    /**
+     * Empty constructor. Is needed for deserialization.
+     * */
+    @SuppressWarnings("unused")
     public Student() {
         super();
     }

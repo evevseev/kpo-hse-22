@@ -1,1 +1,11 @@
-[{"firstName":"John","lastName":"Doe","lessonGrade":5,"present":false},{"firstName":"Jane","lastName":"Smith","lessonGrade":4,"present":false}]
+[ {
+  "firstName" : "John",
+  "lastName" : "Doe",
+  "lessonGrade" : 5,
+  "present" : false
+}, {
+  "firstName" : "Jane",
+  "lastName" : "Smith",
+  "lessonGrade" : 6,
+  "present" : true
+} ]

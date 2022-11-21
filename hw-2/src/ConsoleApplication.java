@@ -12,9 +12,7 @@ public class ConsoleApplication {
         public Status status;
 
         private enum Status {
-            MAIN_MENU,
-            AWAITING_GRADE,
-            AWAITING_PRESENCE,
+            MAIN_MENU, AWAITING_GRADE, AWAITING_PRESENCE,
         }
     }
 
@@ -93,8 +91,13 @@ public class ConsoleApplication {
 
     private void awaitingPresenceStateHandler() {
         System.out.print("Is " + state.student.getFullName() + " present (true/false): ");
-        state.student.setPresent(Boolean.parseBoolean(scanner.nextLine()));
-        state.status = DialogState.Status.AWAITING_GRADE;
+        boolean isPresent = Boolean.parseBoolean(scanner.nextLine());
+        state.student.setPresent(isPresent);
+        if (isPresent) {
+            state.status = DialogState.Status.AWAITING_GRADE;
+        } else {
+            state.status = DialogState.Status.MAIN_MENU;
+        }
     }
 
     private void selectRandomStudent() {
@@ -123,10 +126,12 @@ public class ConsoleApplication {
     }
 
     private void printHelp() {
-        System.out.println("Commands:");
-        System.out.println("• /r – selects random student, asks if present");
-        System.out.println("• /l – list of students who received a grade");
-        System.out.println("• /h – help, lists commands and how to use them");
-        System.out.println("• /e – exit");
+        System.out.println("""
+                Commands:
+                • /r – selects random student, asks if present
+                • /l – list of students who received a grade
+                • /h – help, lists commands and how to use them
+                • /e – exit and save
+                """);
     }
 }
