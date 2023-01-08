@@ -42,7 +42,7 @@ public class DependenciesInjectorCLI {
 
     private static Path validateArgsInput(String[] args) {
         if (args.length != 1) {
-            System.out.println("Usage: java DependencyInjector <path>");
+            System.out.println("Usage: java DependencyInjectorCLI <path>");
             return null;
         }
 
