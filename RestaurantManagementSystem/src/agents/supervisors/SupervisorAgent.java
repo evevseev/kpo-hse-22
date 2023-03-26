@@ -1,6 +1,8 @@
 package agents.supervisors;
 
-public class SupervisorAgent {
+import agents.BasicAgent;
+
+public class SupervisorAgent extends BasicAgent {
     // управляет другими агентами для выполнения заказов
     // посетителей. Запускает процесс создания нового заказа.
     // На основании запроса от агента посетителя создает

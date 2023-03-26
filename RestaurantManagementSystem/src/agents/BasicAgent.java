@@ -1,7 +1,6 @@
 package agents;
 
 import jade.core.Agent;
-import jade.core.AID;
 
 public class BasicAgent extends Agent {
     protected Object[] startupArgs;
