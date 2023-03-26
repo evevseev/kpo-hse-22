@@ -49,7 +49,7 @@ public class ProductAgent extends BasicAgent {
                     reply.setContent(String.valueOf(productQnt));
                 } else {
                     reply.setPerformative(ACLMessage.REFUSE);
-                    reply.setContent("not-avaiable");
+                    reply.setContent("not-available");
                 }
                 myAgent.send(reply);
             } else {
